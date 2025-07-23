@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react'
 import BookDetail from './components/bookDetail';
+import EbookAccessPieChart from './components/EbookAccessPieChart';
+import EditionsDotPlot from './components/EditionsDotPlot';
 import './App.css'
 
 function App() {
@@ -61,7 +63,7 @@ function App() {
 
         <h1>Library Scanner:</h1>
 
-        <div class="summary_stats_container">
+        <div className="summary_stats_container">
 
         <div className="summary_stats_item">
         {list?.num_found !== undefined && (
@@ -96,9 +98,9 @@ function App() {
 
         <br></br>
 
-        <div class="search_container">
+        <div className="search_container">
 
-        <div class="search_container_item">
+        <div className="search_container_item">
 
         <label>
           Min Year: {minYear}
@@ -115,7 +117,7 @@ function App() {
 
         </div>
 
-        <div class="search_container_item">
+        <div className="search_container_item">
 
         <input
           type="text"
@@ -125,7 +127,7 @@ function App() {
 
         </div>
 
-        <div class="search_container_item">
+        <div className="search_container_item">
 
         <label>
           <input
@@ -139,6 +141,13 @@ function App() {
         </div>
 
         </div>
+
+        {filteredResults.length > 0 && (
+          <>
+            <EbookAccessPieChart data={filteredResults} />
+            <EditionsDotPlot data={filteredResults} />
+          </>
+        )}
 
         <br></br>
 
