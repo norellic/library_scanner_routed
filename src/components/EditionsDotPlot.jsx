@@ -7,8 +7,6 @@ const EditionsDotPlot = ({ data }) => {
     title: book.title,
     editions: book.edition_count || 0
   }));
-  console.log('data:', data);
-  console.log('cleanedData:', cleanedData);
 
   return (
     <div style={{ width: '100%', height: 400 }}>

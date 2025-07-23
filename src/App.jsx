@@ -142,12 +142,8 @@ function App() {
 
         </div>
 
-        {filteredResults.length > 0 && (
-          <>
-            <EbookAccessPieChart data={filteredResults} />
-            <EditionsDotPlot data={filteredResults} />
-          </>
-        )}
+        <EditionsDotPlot data={filteredResults}/>
+        <EbookAccessPieChart data={filteredResults} />
 
         <br></br>
 
