@@ -18,7 +18,7 @@ function App() {
         const response = await fetch(query);
         const json = await response.json(); 
         setList(json);
-        console.log(json);
+        //console.log(json);
       } catch (error) {
         console.error("Error fetching from API:", error);
     }}
@@ -63,13 +63,13 @@ function App() {
 
         <div class="summary_stats_container">
 
-        <div class="summary_stats_item">
+        <div className="summary_stats_item">
         {list?.num_found !== undefined && (
         <p>Number of results found: {booksToDisplay.length}</p>
         )}
         </div>
 
-        <div class="summary_stats_item">
+        <div className="summary_stats_item">
         {list?.num_found !== undefined && (
           <p>
             Average publication year: {
@@ -84,7 +84,7 @@ function App() {
         )}
         </div>
 
-        <div class="summary_stats_item">
+        <div className="summary_stats_item">
         {list?.num_found !== undefined && (
           <p>Books with covers: {
             booksToDisplay.filter(book => book.cover_i !== undefined).length
@@ -150,6 +150,7 @@ function App() {
             author={book.author_name}
             year={book.first_publish_year}
             cover_id={book.cover_i}
+            keyForUrl = {book.key}
           />
         ))}
       </ul>
