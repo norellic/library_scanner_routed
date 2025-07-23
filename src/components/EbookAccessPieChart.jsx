@@ -1,4 +1,4 @@
-import { PieChart, Pie, Cell, Tooltip, Legend } from "recharts";
+import { PieChart, Pie, Cell, Tooltip, Legend, ResponsiveContainer } from "recharts";
 
 const EbookAccessPieChart = ({ data }) => {
   const counts = data.reduce(
@@ -21,6 +21,9 @@ const EbookAccessPieChart = ({ data }) => {
   const COLORS = ["#4CAF50", "#F44336"];
 
   return (
+    <div style={{ width: '50%', height: 400, marginTop: 20 }}>
+       <h3>eBook Access Distribution</h3>
+       <ResponsiveContainer>
     <PieChart width={300} height={300}>
       <Pie
         data={chartData}
@@ -38,6 +41,8 @@ const EbookAccessPieChart = ({ data }) => {
       <Tooltip />
       <Legend />
     </PieChart>
+    </ResponsiveContainer>
+  </div>
   );
 };
 

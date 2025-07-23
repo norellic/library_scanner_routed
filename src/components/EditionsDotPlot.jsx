@@ -3,13 +3,16 @@ import { ScatterChart, Scatter, XAxis, YAxis, Tooltip, ResponsiveContainer } fro
 
 const EditionsDotPlot = ({ data }) => {
   // Clean data
-  const cleanedData = data.map(book => ({
-    title: book.title,
-    editions: book.edition_count || 0
-  }));
+  const cleanedData = data
+    .filter(item => typeof item.edition_count === "number" && item.edition_count <= 200)
+    .map(item => ({
+      title: item.title,
+      editions: item.edition_count
+    }));
 
   return (
-    <div style={{ width: '100%', height: 400 }}>
+    <div style={{ width: '50%', height: 400 }}>
+        <h3>Editions per Book (Max 200)</h3>
       <ResponsiveContainer>
         <ScatterChart
           margin={{ top: 20, right: 20, bottom: 40, left: 20 }}

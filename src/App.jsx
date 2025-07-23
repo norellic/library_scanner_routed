@@ -142,9 +142,15 @@ function App() {
 
         </div>
 
-        <EditionsDotPlot data={filteredResults}/>
-        <EbookAccessPieChart data={filteredResults} />
 
+        <div>
+        <EditionsDotPlot data={filteredResults}/>
+        <br></br>
+        <br></br>
+        <EbookAccessPieChart data={filteredResults} />
+        </div>
+
+        <br></br>
         <br></br>
 
         <ul>
